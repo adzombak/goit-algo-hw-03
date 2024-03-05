@@ -26,4 +26,13 @@ def draw_koch_curve(order, size=300):
     window.mainloop()
 
 
-draw_koch_curve(3)
+if __name__ == '__main__':
+    try:
+        recursive_level = int(input("Enter the level of recursion (from 0 to 5): "))
+
+        if recursive_level < 0 or recursive_level > 5:
+            raise ValueError
+
+        draw_koch_curve(recursive_level)
+    except ValueError:
+        print("Invalid input. Please enter a number between 0 and 5.")
